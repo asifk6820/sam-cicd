@@ -23,3 +23,31 @@ Resources:
                 Properties:
                   Path: /sam
                   Method: get
+    StudentCrud:
+        Type: AWS::Serverless::Function
+        Properties:
+            Handler: index.handler
+            Runtime: nodejs14.x
+            CodeUri: ./src/student-crud/
+            Events:
+              CreateStudent:
+                Type: Api
+                Properties:
+                  Path: /createStudent
+                  Method: put
+              ReadStudent:
+                Type: Api
+                Properties:
+                  Path: /readStudent
+                  Method: get
+              UpdateStudent:
+                Type: Api
+                Properties:
+                  Path: /updateStudent/{id}
+                  Method: put
+              DeleteStudent:
+                Type: Api
+                Properties:
+                  Path: /deleteStudent/{id}
+                  Method: delete
+
