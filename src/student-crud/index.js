@@ -8,10 +8,10 @@ exports.handler = async (event, context) => {
     try {
         console.log("==========>event.path",event.path)
       switch (event.path) {
-        case "/deleteStudent/{id}":
+        case `/deleteStudent/${event.pathParameters.id}`:
           body = `Deleted student ${event.pathParameters.id}`;
           break;
-        case "/updateStudent/{id}":
+        case `/updateStudent/${event.pathParameters.id}`:
           body = "Dummy data";
           break;
         case "/readStudent":
@@ -22,7 +22,7 @@ exports.handler = async (event, context) => {
           body = `Put student ${requestJSON.id}`;
           break;
         default:
-          throw new Error(`Unsupported route: "${event.routeKey}"`);
+          throw new Error(`Unsupported route: "${event.path}"`);
       }
     } catch (err) {
       statusCode = 400;
