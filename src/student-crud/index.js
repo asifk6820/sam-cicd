@@ -1,4 +1,4 @@
-export const handler = async (event, context) => {
+exports.handler = async (event, context) => {
     let body;
     let statusCode = 200;
     const headers = {
