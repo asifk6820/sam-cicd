@@ -7,6 +7,7 @@ exports.handler = async (event, context) => {
   
     try {
         console.log("==========>event.path",event.path)
+        console.log("==========>checking",event.path)
       switch (event.path) {
         case `/deleteStudent/${event.pathParameters.id}`:
           body = `Deleted student ${event.pathParameters.id}`;
