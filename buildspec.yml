@@ -14,7 +14,7 @@ containers:
             files:
                 - post-saml.yaml
                 - beta.json
-    secondary-artifacts:
+        secondary-artifacts:
             secondaryArtifact1:
-              files:
-                - secondary-artifact1.zip
+                files:
+                    - secondary-artifact1.zip
