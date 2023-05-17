@@ -3,18 +3,15 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      python: 3.8
-      nodejs: 14
+      nodejs: 14.x
     commands:
       - npm install
-      - pip install cryptography
-      - pip install --upgrade pip
-      - pip install aws-sam-cli
-      
   build:
     commands:
-      - sam build --template sam.yml
-
-artifacts:
-  files:
-    - packaged.yaml
+      - npm run build
+  deploy:
+    commands:
+      - sam build
+  artifacts:
+    files:
+      - build/package.zip
