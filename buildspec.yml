@@ -7,6 +7,8 @@ phases:
       nodejs: 14
     commands:
       - npm install
+      - pip install cryptography
+      - pip install --upgrade pip
       - pip install aws-sam-cli
       
   build:
