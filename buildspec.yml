@@ -3,12 +3,13 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      python: 3.8
+      nodejs: 14
     commands:
-      - pip install aws-sam-cli
+      - npm install -g aws-sam-local
 
   build:
     commands:
+      - npm install
       - sam build --template sam.yml
 
 artifacts:
